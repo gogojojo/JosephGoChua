@@ -1,0 +1,34 @@
+input { height: 60px;
+		width: 300px;
+		background-color: yellow;
+		color: white;
+		font-weight: bolder;
+		display: block;
+		margin: 40px auto;
+		border: none;
+		border-radius: 10px;
+		font-size: 15px;
+	
+	}
+h1 {
+	text-align: center;
+	font-size: 80px;
+	color: #FA6900;
+}
+body {
+	background-color: #A7DBD8;
+	font-family: 'Lato', sans-serif;
+	
+}
+#rock {
+	background-color: #69D2E7;
+}
+#paper {
+	background-color: #F38630;
+}
+#scissors {
+	background-color: #E0E4CC;
+}
+#white {
+	color:white;
+}
