@@ -287,13 +287,13 @@ $scope.boxOne = function() {
     else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
     }
     else if ($scope.firstTurn === true) {
-        $scope.firstPlayer();
         $scope.playCounter ++;
+        $scope.firstPlayer();
         $scope.firstTurn = $scope.firstTurn === false;
 }
     else {
-        $scope.secondPlayer();
         $scope.playCounter ++;
+        $scope.secondPlayer();
         $scope.firstTurn = $scope.firstTurn === false;
     }
     
