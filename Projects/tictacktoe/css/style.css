@@ -1,40 +1,42 @@
 #box1 {
-	border-bottom: 6px dashed #B4DEC1;
-	border-right: 6px dashed #B4DEC1;
+	border-bottom: 5px dotted #F4F4f2;
+	border-right: 5px dotted #F4F4f2;
 }
 #box2 {
-	border-bottom: 6px dashed #B4DEC1;
-	border-right: 6px dashed #B4DEC1;
+	border-bottom: 5px dotted #F4F4f2;
+	border-right: 5px dotted #F4F4f2;
 }
 #box3 {
-	border-bottom: 6px dashed #B4DEC1;
+	border-bottom: 5px dotted #F4F4f2;
 }
 #box4 {
-	border-bottom: 6px dashed #B4DEC1;
-	border-right: 6px dashed #B4DEC1;
+	border-bottom: 5px dotted #F4F4f2;
+	border-right: 5px dotted #F4F4f2;
 }
 #box5 {
-	border-bottom: 6px dashed #B4DEC1;
-	border-right: 6px dashed #B4DEC1;
+	border-bottom: 5px dotted #F4F4f2;
+	border-right: 5px dotted #F4F4f2;
 }
 #box6 {
-	border-bottom: 6px dashed #B4DEC1;
+	border-bottom: 5px dotted #F4F4f2;
 }
 #box7 {
-	border-right: 6px dashed #B4DEC1;
+	border-right: 5px dotted #F4F4f2;
 }
 #box8{
-	border-right: 6px dashed #B4DEC1;
+	border-right: 5px dotted #F4F4f2;
 }
 #box9 {
 	
 }
 body {
-	background-color: white;
+	background-color: #FFD464;
 }
 div {
 	height: 100%;
 	width: 100%;
+	border-spacing: 0px;
+	border-width: 3px;
 }
 
 
@@ -49,22 +51,95 @@ tr {
 }
 
 td {
-	height: 100px;
-	width: 100px;
+	height: 130px;
+	width: 130px;
 	text-align: center;
 	padding: 0;
 	margin: 0;
 	
 }
-h1 {
+h1{
 	text-align: center;
-	color: #FF1F4C;
-	font-family: 'Alegreya Sans SC', sans-serif;
-	font-size: 40px;
-	display: block;
+	font-family: 'Amatic SC', cursive;
+	font-size: 110px;
+	color: #F4F4f2;
+	margin-bottom: 0px;
+	margin-top: 8px;
+	letter-spacing: 6px;
+
+}
+h2 {
+	
+	color: #30302F;
+	font-family: 'Amatic SC', cursive;
+	font-size: 32px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+h3 {
+	color: #30302F;
+	text-align: center;
+	font-family: 'Amatic SC', cursive;
+	font-size: 27px;
+	margin-bottom: 20px;
+	margin-top: 5px;
+}
+.kwest {
+	text-align: center;
+	font-family: 'Amatic SC', cursive;
+	font-size: 120px;
+	color:#1453A4 ;
+	margin-bottom: 5px;
+	margin-top: 20px;
+}
+.tay {
+	text-align: center;
+	font-family: 'Amatic SC', cursive;
+	font-size: 120px;
+	color:#FF1F4C;
+	margin-bottom: 5px;
+	margin-top: 20px;
+}
+.draw {
+	text-align: center;
+	font-family: 'Amatic SC', cursive;
+	font-size: 120px;
+	color:#30302F;
+	margin-bottom: 5px;
+	margin-top: 20px;
 }
 div img {
-	height: 90px;
-	width: 70px;
+	height: 110px;
+	width: 110px;
 	margin: auto;
+	padding-top: 8px;
+	padding-right: 4px;
 }
+.yeezy {
+	height:110px;
+	width: 85px;
+	margin: auto;
+	padding-top: 9px;
+}
+
+.one {
+	color: #1453A4;
+}
+.three {
+	color: #FF1F4C;
+}
+button {
+	font-size: 20px;
+	text-align: center;
+    border: none;
+    border-radius: 10%;
+    color:#F4F4f2 ;
+    background-color: #1453A4;
+    font-family: 'Amatic SC', cursive;
+}
+.wrapper {
+	margin-top: 30px;
+    text-align: center;
+}
+

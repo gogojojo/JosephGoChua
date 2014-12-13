@@ -21,7 +21,7 @@ Ticktactoe.controller("gameController",['$scope',function($scope){
 
 $scope.player1 = [];
 $scope.player2 = [];
-$scope.playCounter = 0
+$scope.playCounter = 0;
 $scope.oneWins = 0;
 $scope.twoWins = 0;
 $scope.drawCounter = 0;
@@ -41,6 +41,10 @@ $scope.drawCounter = 0;
     	// else { 
     	// return false
 // }};
+    $scope.header = true;
+    $scope.yeezyWins = false;
+    $scope.tswiftWins = false;
+    $scope.draw = false;
     $scope.firstTurn = true;
 // Funtions that happen with a click
     $scope.showOneFirst = true;
@@ -61,6 +65,16 @@ $scope.drawCounter = 0;
     $scope.showEightSecond = true;
     $scope.showNineFirst = true;
     $scope.showNineSecond = true;
+// 
+    $scope.canplayOne = true;
+    $scope.canplayTwo = true;
+    $scope.canplayThree = true;
+    $scope.canplayFour = true;
+    $scope.canplayFive = true;
+    $scope.canplaySix = true;
+    $scope.canplaySeven = true;
+    $scope.canplayEight = true;
+    $scope.canplayNine = true;
 // Game fuctions
 $scope.findWinner2 = function(){
 
@@ -68,76 +82,95 @@ $scope.findWinner2 = function(){
         $scope.player2.indexOf(2) != -1 &&
         $scope.player2.indexOf(3) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
     else if (
         $scope.player2.indexOf(1) != -1 &&
         $scope.player2.indexOf(4) != -1 &&
         $scope.player2.indexOf(7) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
     else if (
         $scope.player2.indexOf(1) != -1 &&
         $scope.player2.indexOf(5) != -1 &&
         $scope.player2.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if (
         $scope.player2.indexOf(1) != -1 &&
         $scope.player2.indexOf(5) != -1 &&
         $scope.player2.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if (
         $scope.player2.indexOf(2) != -1 &&
         $scope.player2.indexOf(5) != -1 &&
         $scope.player2.indexOf(8) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if (
         $scope.player2.indexOf(3) != -1 &&
         $scope.player2.indexOf(6) != -1 &&
         $scope.player2.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if (
         $scope.player2.indexOf(3) != -1 &&
         $scope.player2.indexOf(5) != -1 &&
         $scope.player2.indexOf(7) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if (
         $scope.player2.indexOf(4) != -1 &&
         $scope.player2.indexOf(5) != -1 &&
         $scope.player2.indexOf(6) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if (
         $scope.player2.indexOf(7) != -1 &&
         $scope.player2.indexOf(8) != -1 &&
         $scope.player2.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.tswiftWins = true;
+            $scope.header = false;
             $scope.twoWins ++;
+
         }
         else if ( $scope.playCounter >= 9
             ) {
-            alert("It's a tie!");
+            $scope.draw = true;
+            $scope.header = false;
             $scope.drawCounter ++;
         }
         else {
@@ -149,7 +182,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(2) != -1 &&
         $scope.player1.indexOf(3) != -1
         ) {
-            alert("Player 1 Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
     else if (
@@ -157,7 +191,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(4) != -1 &&
         $scope.player1.indexOf(7) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
     else if (
@@ -165,7 +200,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(5) != -1 &&
         $scope.player1.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
         else if (
@@ -173,7 +209,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(5) != -1 &&
         $scope.player1.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
         else if (
@@ -181,7 +218,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(5) != -1 &&
         $scope.player1.indexOf(8) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
         else if (
@@ -189,7 +227,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(6) != -1 &&
         $scope.player1.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
         else if (
@@ -197,7 +236,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(5) != -1 &&
         $scope.player1.indexOf(7) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
         else if (
@@ -205,7 +245,8 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(5) != -1 &&
         $scope.player1.indexOf(6) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
         else if (
@@ -213,12 +254,13 @@ $scope.findWinner = function(){
         $scope.player1.indexOf(8) != -1 &&
         $scope.player1.indexOf(9) != -1
         ) {
-            alert("Player Wins");
+            $scope.yeezyWins = true;
+            $scope.header = false;
             $scope.oneWins ++;
         }
-        else if ( $scope.playCounter >= 9
-            ) {
-            alert("It's a tie!");
+        else if ( $scope.playCounter == 9) {
+            $scope.draw = true;
+            $scope.header = false;
             $scope.drawCounter ++;
         }
         else {
@@ -239,135 +281,216 @@ $scope.secondPlayer = function(){
 
 //  Function for box1
 $scope.boxOne = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+    
+    if ($scope.canplayOne === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
         $scope.firstPlayer();
+        $scope.playCounter ++;
+        $scope.firstTurn = $scope.firstTurn === false;
 }
     else {
         $scope.secondPlayer();
+        $scope.playCounter ++;
+        $scope.firstTurn = $scope.firstTurn === false;
     }
-    $scope.firstTurn = $scope.firstTurn === false;
+    
+    $scope.canplayOne = false;
 
 };
 // Fuction for box2
 $scope.boxTwo = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+
+    if ($scope.canplayTwo === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showTwoFirst = false;
     $scope.player1.push(2);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showTwoSecond = false;
     $scope.player2.push(2);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplayTwo = false;
 
 };
 // Function for box3
 $scope.boxThree = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+    
+    if ($scope.canplayThree === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showThreeFirst = false;
     $scope.player1.push(3);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showThreeSecond = false;
     $scope.player2.push(3);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplayThree = false;
 };
 $scope.boxFour = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+    
+    if ($scope.canplayFour === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showFourFirst = false;
     $scope.player1.push(4);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showFourSecond = false;
     $scope.player2.push(4);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplayFour = false;
 };
 // Function for box 5
 $scope.boxFive = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+    
+    if ($scope.canplayFive === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showFiveFirst = false;
     $scope.player1.push(5);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showFiveSecond = false;
     $scope.player2.push(5);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+   
+    $scope.canplayFive = false;
 };
 // Box 6
 $scope.boxSix = function() {
-    $scope.playCounter ++
-   if ($scope.firstTurn === true) {
+   
+    if ($scope.canplaySix === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showSixFirst = false;
     $scope.player1.push(6);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showSixSecond = false;
     $scope.player2.push(6);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplaySix = false;
 };
 //  Box 7
 $scope.boxSeven = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+    
+    if ($scope.canplaySeven === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showSevenFirst = false;
     $scope.player1.push(7);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showSevenSecond = false;
     $scope.player2.push(7);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplaySeven = false;
 };
 // Box 8
 $scope.boxEight = function() {
-    $scope.playCounter ++
-    if ($scope.firstTurn === true) {
+    
+    if ($scope.canplayEight === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showEightFirst = false;
     $scope.player1.push(8);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showEightSecond = false;
     $scope.player2.push(8);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplayEight = false;
 };
 //  Box 9 
 $scope.boxNine = function() {
-    $scope.playCounter ++
-   if ($scope.firstTurn === true) {
+
+    if ($scope.canplayNine === false) {
+    }
+    else if ($scope.yeezyWins == true || $scope.tswiftWins == true) {    
+    }
+    else if ($scope.firstTurn === true) {
     $scope.showNineFirst = false;
     $scope.player1.push(9);
+    $scope.playCounter ++;
     $scope.findWinner();
+    $scope.firstTurn = $scope.firstTurn === false;
     }
     else {
     $scope.showNineSecond = false;
     $scope.player2.push(9);
+    $scope.playCounter ++;
     $scope.findWinner2();
-    }
     $scope.firstTurn = $scope.firstTurn === false;
+    }
+    
+    $scope.canplayNine = false;
 };
 $scope.resetGame = function() {
     $scope.player1 = [];
@@ -392,6 +515,19 @@ $scope.resetGame = function() {
     $scope.showNineSecond = true;
     $scope.firstTurn = true;
     $scope.playCounter = 0;
+    $scope.canplayOne = true;
+    $scope.canplayTwo = true;
+    $scope.canplayThree = true;
+    $scope.canplayFour = true;
+    $scope.canplayFive = true;
+    $scope.canplaySix = true;
+    $scope.canplaySeven = true;
+    $scope.canplayEight = true;
+    $scope.canplayNine = true;
+    $scope.header = true;
+    $scope.tswiftWins = false;
+    $scope.yeezyWins = false;
+    $scope.draw = false;
 };
 
 }]);
