@@ -19,28 +19,12 @@ Ticktactoe.controller("gameController",['$scope',function($scope){
 //  	it will display player 2's image, add 1 to the turn counter
 // 		add the # to player 1's list, then check if they won
 
-$scope.player1 = [];
-$scope.player2 = [];
-$scope.playCounter = 0;
-$scope.oneWins = 0;
-$scope.twoWins = 0;
-$scope.drawCounter = 0;
-// $scope.winnerCheck = function() {
-        // if ($scope.player1.indexOf(1) != -1 && 
-        	// $scope.player1.indexOf(2) != -1 &&
-        	// $scope.player1.indexOf(3) != -1) {
-            // return true;
-            // player1 wins, player1's counter ++, gameresets
-        // }
-        // if (player2.indexOf(1) != -1 && 
-        	// player2.indexOf(2) != -1 &&
-        	// player2.indexOf(3) != -1) {
-            // player2 wins, player2's counter ++, gameresets
-        // }
-        // Continue down the line for all of the checks
-    	// else { 
-    	// return false
-// }};
+    $scope.player1 = [];
+    $scope.player2 = [];
+    $scope.playCounter = 0;
+    $scope.oneWins = 0;
+    $scope.twoWins = 0;
+    $scope.drawCounter = 0;
     $scope.header = true;
     $scope.yeezyWins = false;
     $scope.tswiftWins = false;
@@ -493,6 +477,19 @@ $scope.boxNine = function() {
     $scope.canplayNine = false;
 };
 $scope.resetGame = function() {
+    if ($scope.yeezyWins == true) {
+        $scope.firstTurn = true;
+    }
+    else if ($scope.draw == true && $scope.firstTurn === true) {
+        $scope.firstTurn = false;
+    }
+    else if 
+        ($scope.draw == true && $scope.firstTurn === false) {
+        $scope.firstTurn = true;
+    }
+    else {
+        $scope.firstTurn = false;
+    }
     $scope.player1 = [];
     $scope.player2 = [];
     $scope.showOneFirst = true;
@@ -513,7 +510,6 @@ $scope.resetGame = function() {
     $scope.showEightSecond = true;
     $scope.showNineFirst = true;
     $scope.showNineSecond = true;
-    $scope.firstTurn = true;
     $scope.playCounter = 0;
     $scope.canplayOne = true;
     $scope.canplayTwo = true;
