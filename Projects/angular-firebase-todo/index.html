@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>To Do...or...Not To Do</title>
+
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="js/angular.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+    	<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/todosController.js"></script>
+
+	</head>
+
+	<body ng-app='todosApp'>
+
+		<div class="wrapper" ng-controller="TodosController as todos">
+			<header>
+				<h1> YOU HAVE {{todos.todosList.length}} THINGS TO DO</h1>
+			</header>
+			<main>
+				<section class="add-todo">
+					<input class="text-box" placeholder="add your todo here!" type="text" ng-model="todos.text" >
+					<button class="btn btn-add" ng-click="todos.addTodo()"> + </button>
+				</section>
+				<ul>
+					<li ng-repeat="todo in todos.todosList">
+						<input class="checkbox" type="checkbox" ng-model='todo.done' ng-change='todos.todosList.$save(todo)'>
+						<span ng-class='{done: todo.done}'>{{todo.task}} </span>
+						<button class="btn btn-delete" ng-click="todos.deleteTodo($index)"> - </button>
+					</li>
+				</ul>
+			</main>
+		</div>
+
+	</body>
+</html>

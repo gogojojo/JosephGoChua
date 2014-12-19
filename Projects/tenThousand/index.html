@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>	
+<html>
+<head>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/stylesheet.css">
+	<!-- HTML -->
+	<!-- Angular JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="//cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="//cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/appController.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	
+</head>
+<body ng-app = "tenThousandApp">
+	<section ng-controller="tenThousandController as t">
+    <h1> {{t.takeOff.start - t.takeOff.x | number}} </h1>
+    <h2> Hours left until you are good at something! </h2>
+	   <form ng-submit="t.addMinutes(time); time = null;">
+      <input id = "textbox" type="number"  ng-model="time" placeholder = "HOW MANY HOURS DID YOU PRACTICE TODAY?">
+      <!-- <br><input id = "submitbutton" type="submit"> -->
+      <br><button id = "resetbutton" ng-click="t.resetCount()">reset</button>
+    </form>
+    <p> {{time}} </p>
+
+  </section>	
+</body>
+</html>

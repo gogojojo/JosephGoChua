@@ -1,0 +1,36 @@
+<html>
+<head>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Angular JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<!-- JS file -->
+	<script src='js/main.js'></script>
+	<script src='js/fishController.js'></script>
+	<link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+	<title> I like me some fish</title>
+</head>
+<body ng-app="fishApp">
+	<section ng-controller="FishController as fish">
+	<div class='header'>
+		<h1> I LIKE FISH! </h1>
+	</div>
+	<div class = "information">
+		<ul ng-show="fish.canSearch">
+			<li ng-repeat="fish in fish.fishes | filter:search"> 
+			<span class='fish-name'> <h2>{{fish.name}}</h2></span>
+			<br> <span class="images"> <img src='{{fish.image}}'> </span>
+
+
+			</li>
+		</ul>
+	</div>
+	<div class="which_fish">
+		<input type="text" placeholder="what fish do you want to learn more about" ng-model='search'> 
+		<br>
+		<button ng-click='fish.checkSearch()'> find me some fish dawg</button>
+	</div>
+	</section>
+</body>
+</html>

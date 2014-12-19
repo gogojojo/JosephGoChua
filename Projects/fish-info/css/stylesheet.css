@@ -1,0 +1,17 @@
+body {
+	font-family: 'Hammersmith One', sans-serif;
+}
+h1 {
+	font-size: 100px;
+	text-align: center;
+}
+.information {
+	text-align: center;
+	list-style: none;
+}
+.which_fish {
+	text-align: center;
+}
+li {
+	list-style: none;
+}

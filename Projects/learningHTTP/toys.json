@@ -1,0 +1,17 @@
+[
+    {
+        "name": "toycar",
+        "cost": 5,
+        "location": "bedroom"
+    },
+    {
+        "name": "Skylanders",
+        "cost": 100,
+        "location": "living Room"
+    },
+    {
+        "name": "Red Ryder BB  GUN",
+        "cost": 150,
+        "location": "Den"
+    }
+]
