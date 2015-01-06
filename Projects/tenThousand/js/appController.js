@@ -1,4 +1,4 @@
-angular.module('tenThousandApp').controller('tenThousandController',tenThousandController);
+ angular.module('tenThousandApp').controller('tenThousandController',tenThousandController);
 // injecting firebase into the code 
 tenThousandController.$inject = ['$firebase']
 

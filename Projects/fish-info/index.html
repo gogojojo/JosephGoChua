@@ -19,17 +19,22 @@
 	<div class = "information">
 		<ul ng-show="fish.canSearch">
 			<li ng-repeat="fish in fish.fishes | filter:search"> 
-			<span class='fish-name'> <h2>{{fish.name}}</h2></span>
+			<span class='fish-name'> <h3>{{fish.name}}</h3></span>
 			<br> <span class="images"> <img src='{{fish.image}}'> </span>
+			<p class='spec-information'> AKA: <span class="info">{{fish.aka}} </span> <br>
+									LOCATION: <span class="info"> {{fish.location}} </span> <br>
+									RECIEPE: <span class="info">{{fish.recipie}} </span>
+			</p>
 
 
 			</li>
 		</ul>
 	</div>
 	<div class="which_fish">
-		<input type="text" placeholder="what fish do you want to learn more about" ng-model='search'> 
-		<br>
-		<button ng-click='fish.checkSearch()'> find me some fish dawg</button>
+		<form ng-submit='fish.checkSearch()'>
+		<input type="text" placeholder="WHICH FISH ARE YOU LOOKING FOR?" ng-model='search'> 
+		<h2> PRESS ENTER</H2>
+		</form>
 	</div>
 	</section>
 </body>

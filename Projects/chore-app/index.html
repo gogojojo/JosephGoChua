@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<link rel="stylesheet" href="css/stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+	<script src="js/main.js"></script>
+    <script src="js/appController.js"></script>
+	<title></title>
+</head>
+<body ng-app='choreApp'>
+<section ng-controller='choreController as chores'>
+	<div class="header">
+		<h1> The chore application</h1>
+	</div>
+	<div class='list-home'>
+		<ul>
+			<li ng-repeat='todo in chores.todoList'>
+				<h1>{{todo.due}}</h1>
+				<h2> {{todo.todos}}</h2>
+			</li>
+		</ul>
+	</div>
+	<input type="text" ng-model='due'>
+	<input type="text" ng-model='todos'>
+
+	<button ng-click='chores.addTodos(due, todos)'></button>
+</section>
+</body>
+</html>

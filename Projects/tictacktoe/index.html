@@ -4,21 +4,28 @@
 <head>
   <!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-  <!-- Angular JS -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"> </script>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
   <!-- Javascript -->
 	<script src="js/main.js"></script>
+  <script src="js/appController.js"></script>
   <!-- Fonts  -->
   <link href='http://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
 	<title> tic tac toe</title>
 </head>
 
 <!-- Headers -->
-<body ng-controller="gameController">
-  <h1 ng-show="header"> - TIC TAC TOE -  </h1>
-  <h1 class ="kwest" ng-show="yeezyWins"> - YEEZY WINS!! - </h1>
-  <h1 class ="tay" ng-show="tswiftWins"> - TSWIFT WINS!! - </h1>
-  <h1 class ="draw" ng-show="draw"> - ITS A TIE - </h1>
+<body ng-controller="tickTacToeController as tick">
+  <h1 ng-show="tick.sync.header"> - TIC TAC TOE -  </h1>
+  <h1 class ="kwest" ng-show="tick.sync.yeezyWins"> - YEEZY WINS!! - </h1>
+  <h1 class ="tay" ng-show="tick.sync.tswiftWins"> - TSWIFT WINS!! - </h1>
+  <h1 class ="draw" ng-show="tick.sync.draw"> - ITS A TIE - </h1>
 <!-- Second Row of Headers -->
   <h2> 
     <span class="one">( OR THE IMA LET YOU FINISH.. </span>
@@ -28,11 +35,11 @@
 
   <h3> 
     <span class="one"> 
-     - KANYE WEST: {{oneWins}} 
+     - KANYE WEST: {{tick.sync.oneWins}} 
     </span>
-    DRAW: {{drawCounter}}
+    DRAW: {{tick.sync.drawCounter}}
     <span class="three"> 
-      TAYLOR SWIFT: {{twoWins}} - 
+      TAYLOR SWIFT: {{tick.sync.twoWins}} - 
     </span>
   </h3>
   
@@ -40,31 +47,31 @@
   <tr>
     <!-- This is for Box 1 -->
     <td id="box1"> 
-      <div class="button" ng-click="boxOne()">    <span ng-hide="showOneFirst">
+      <div class="button" ng-click="tick.boxOne()">    <span ng-hide="tick.sync.showOneFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showOneSecond">
+        <span ng-hide="tick.sync.showOneSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
     </td>
     <!-- This is for box 2 -->
     <td id="box2">
-    <div class="button" ng-click="boxTwo()">    
-      <span ng-hide="showTwoFirst">
+    <div class="button" ng-click="tick.boxTwo()">    
+      <span ng-hide="tick.sync.showTwoFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showTwoSecond">
+        <span ng-hide="tick.sync.showTwoSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
     </td>
     <!-- This is for box 3 -->
     <td id="box3">
-      <div class="button" ng-click="boxThree()">    <span ng-hide="showThreeFirst">
+      <div class="button" ng-click="tick.boxThree()">    <span ng-hide="tick.sync.showThreeFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showThreeSecond">
+        <span ng-hide="tick.sync.showThreeSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
@@ -74,30 +81,30 @@
   <tr>
     <!-- This is for box 4 -->
     <td id="box4"> 
-      <div class="button" ng-click="boxFour()">    <span ng-hide="showFourFirst">
+      <div class="button" ng-click="tick.boxFour()">    <span ng-hide="tick.sync.showFourFirst">
             <img class="yeezy" src="Images/Yeezy.png">
-        </span>
-        <span ng-hide="showFourSecond">
+        </span> 
+        <span ng-hide="tick.sync.showFourSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
     </td>
     <!-- This is for box 5 -->
     <td id="box5">
-      <div class="button" ng-click="boxFive()">    <span ng-hide="showFiveFirst">
+      <div class="button" ng-click="tick.boxFive()">    <span ng-hide="tick.sync.showFiveFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showFiveSecond">
+        <span ng-hide="tick.sync.showFiveSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
     </td>		
     <!-- This is for box 6 -->
     <td id="box6">
-      <div class="button" ng-click="boxSix()">    <span ng-hide="showSixFirst">
+      <div class="button" ng-click="tick.boxSix()">    <span ng-hide="tick.sync.showSixFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showSixSecond">
+        <span ng-hide="tick.sync.showSixSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
@@ -107,29 +114,29 @@
   <tr>
     <!-- This is for box 7 -->
     <td id="box7">
-      <div class="button" ng-click="boxSeven()">    <span ng-hide="showSevenFirst">
+      <div class="button" ng-click="tick.boxSeven()">    <span ng-hide="tick.sync.showSevenFirst">
             <img  class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showSevenSecond">
+        <span ng-hide="tick.sync.showSevenSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
     </td>
     <!-- This is for box 8 -->
     <td id="box8">
-      <div class="button" ng-click="boxEight()">    <span ng-hide="showEightFirst">
+      <div class="button" ng-click="tick.boxEight()">    <span ng-hide="tick.sync.showEightFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showEightSecond">
+        <span ng-hide="tick.sync.showEightSecond">
             <img src="Images/Taylor.png">
         </span>
     </td>		
     <!-- This is for box 9 -->
     <td id="box9">
-      <div class="button" ng-click="boxNine()">    <span ng-hide="showNineFirst">
+      <div class="button" ng-click="tick.boxNine()">    <span ng-hide="tick.sync.showNineFirst">
             <img class="yeezy" src="Images/Yeezy.png">
         </span>
-        <span ng-hide="showNineSecond">
+        <span ng-hide="tick.sync.showNineSecond">
             <img src="Images/Taylor.png">
         </span>
       </div>
@@ -140,7 +147,7 @@
   <!-- This is the end of the tic tac toe game board -->
 </div>
 <div class="wrapper">
-    <button ng-click="resetGame()">New Game</button>
+    <button ng-click="tick.resetGame()">New Game</button>
 </div>
 </body>
 </html>

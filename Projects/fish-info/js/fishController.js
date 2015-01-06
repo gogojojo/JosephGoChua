@@ -8,15 +8,12 @@ function FishController() {
 		// fish.addFish = addFish;
 		fish.canSearch = false;
 		fish.fishes = [ 
-				{ 	name:'rainbow trout',
-					location:'california',
-					weight:'a lot of it',
-					image:'img/rainbowtrout.jpg'
+				{ 	name:'RAINBOW TROUT',
+					aka: 'STEEL HEAD TROUT',
+					location:'COLD WATER_ PACIFIC OCEAN',
+					recipie:'http://allrecipes.com/recipe/baked-fresh-rainbow-trout/',
+					image:'img/rainbowtrout.png',
 				},
-				{	name:'salmon',
-					location:'everywhere',
-					weight:'a lot of it',
-				}
 	];
 
 	function checkSearch() {
